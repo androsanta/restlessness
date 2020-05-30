@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { getNodeModulesRoot, getPrjRoot } from 'root/services/path-resolver';
+import { getConfigsRoot, getNodeModulesRoot } from 'root/services/path-resolver';
 
 interface JsonPlugin {
   id: string,
@@ -19,7 +19,7 @@ export default class Plugin {
   module: Module
 
   static get pluginsJsonPath(): string {
-    return path.join(getPrjRoot(), 'plugins.json');
+    return path.join(getConfigsRoot(), 'plugins.json');
   }
 
   static async getList(withModule: boolean = false): Promise<Plugin[]> {

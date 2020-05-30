@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { getPrjRoot } from 'root/services/path-resolver';
+import { getConfigsRoot, getPrjRoot } from 'root/services/path-resolver';
 import { Dao } from 'root/models';
 
 export enum EnvType {
@@ -28,7 +28,7 @@ export default class Env {
   stage: EnvStage
 
   static get envsJsonPath(): string {
-    return path.join(getPrjRoot(), 'envs.json');
+    return path.join(getConfigsRoot(), 'envs.json');
   }
 
   static async getList(): Promise<Env[]> {

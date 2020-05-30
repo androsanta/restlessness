@@ -12,6 +12,8 @@ const getNodeModulesRoot = (): string => path.join(getPrjRoot(), 'node_modules')
 
 const getDistRoot = (): string => path.join(getPrjRoot(), 'dist');
 
+const getConfigsRoot = (): string => path.join(getPrjRoot(), 'configs');
+
 const getSrcRoot = (): string => path.join(getPrjRoot(), 'src');
 
 const getEndpointsRoot = (): string => path.join(getSrcRoot(), 'endpoints');
@@ -30,4 +32,5 @@ export {
   getModelsRoot,
   getDistEndpointsRoot,
   getAuthorizersRoot,
+  getConfigsRoot,
 };

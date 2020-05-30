@@ -1,13 +1,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { getPrjRoot, getDistEndpointsRoot } from 'root/services/path-resolver';
+import { getDistEndpointsRoot, getConfigsRoot } from 'root/services/path-resolver';
 import { Endpoint } from 'root/models';
 
 export default class Openapi {
   id: number
 
   static get openapiJsonPath(): string {
-    return path.join(getPrjRoot(), 'openapi.json');
+    return path.join(getConfigsRoot(), 'openapi.json');
   }
 
   static getParameters (fields, allKeys, inValue) {

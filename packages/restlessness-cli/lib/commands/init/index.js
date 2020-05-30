@@ -50,7 +50,7 @@ provider:
 plugins:
   - serverless-offline
 
-functions: \${file(./functions.json):functions}
+functions: \${file(./configs/functions.json):functions}
 `
 
 // @TODO: Move DEV and DEPLOY scripts to an external module like react-scripts (core?)

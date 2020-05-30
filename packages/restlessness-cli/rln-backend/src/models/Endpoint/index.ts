@@ -1,6 +1,6 @@
 import fsSync, { promises as fs } from 'fs';
 import path from 'path';
-import { getPrjRoot, getEndpointsRoot, getSrcRoot } from 'root/services/path-resolver';
+import { getEndpointsRoot, getSrcRoot, getConfigsRoot } from 'root/services/path-resolver';
 import { handlerTemplate, indexTemplate, interfacesTemplate, exporterTemplate, validationsTemplate, testTemplate } from 'root/models/Endpoint/templates';
 import { capitalize } from 'root/services/util';
 import Route from 'root/models/Route';
@@ -32,11 +32,11 @@ export default class Endpoint {
   authorizer: Authorizer
 
   static get endpointsJsonPath(): string {
-    return path.join(getPrjRoot(), 'endpoints.json');
+    return path.join(getConfigsRoot(), 'endpoints.json');
   }
 
   static get functionsJsonPath(): string {
-    return path.join(getPrjRoot(), 'functions.json');
+    return path.join(getConfigsRoot(), 'functions.json');
   }
 
   static async getList(): Promise<Endpoint[]> {

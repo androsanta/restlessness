@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { getNodeModulesRoot, getPrjRoot } from 'root/services/path-resolver';
+import {getConfigsRoot, getNodeModulesRoot, getPrjRoot} from 'root/services/path-resolver';
 
 interface JsonDao {
   id: string,
@@ -21,7 +21,7 @@ export default class Dao {
   module: Module
 
   static get daosJsonPath(): string {
-    return path.join(getPrjRoot(), 'daos.json');
+    return path.join(getConfigsRoot(), 'daos.json');
   }
 
   static async getList(withModule: boolean = false): Promise<Dao[]> {

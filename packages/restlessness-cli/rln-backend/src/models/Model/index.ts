@@ -1,6 +1,6 @@
 import fsSync, { promises as fs } from 'fs';
 import path from 'path';
-import { getModelsRoot, getPrjRoot } from 'root/services/path-resolver';
+import { getConfigsRoot, getModelsRoot } from 'root/services/path-resolver';
 import Dao from 'root/models/Dao';
 import { indexTemplate } from 'root/models/Model/templates';
 import { capitalize } from 'root/services/util';
@@ -17,7 +17,7 @@ export default class Model {
   dao: Dao
 
   static get modelsJsonPath(): string {
-    return path.join(getPrjRoot(), 'models.json');
+    return path.join(getConfigsRoot(), 'models.json');
   }
 
   static async getList(): Promise<Model[]> {
